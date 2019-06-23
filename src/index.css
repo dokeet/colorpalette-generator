@@ -1,3 +1,7 @@
+:root {
+  --bg1: rgb(161, 255, 250);
+  --bg2: rgb(255, 157, 203);
+}
 body {
   margin: 0;
   padding: 0;
@@ -11,4 +15,25 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+html {
+  background: linear-gradient(var(--bg1), var(--bg2));
+  height: 100%;
+}
+html::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to bottom,
+    var(--bg1),
+    var(--bg2)
+  );
+  z-index: -1;
+  transition: opacity 0.5s linear;
+  opacity: 0;
 }
