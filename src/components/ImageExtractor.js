@@ -156,7 +156,9 @@ function ImageExtractor() {
 				}}
 			>
 				<span>
-					<p style={{fontSize: "14px", paddingLeft: "1rem", fontWeight: 600}}>Draw</p>
+					<p style={{ fontSize: "14px", paddingLeft: "1rem", fontWeight: 600 }}>
+						Draw
+					</p>
 				</span>
 				<input
 					type="checkbox"
@@ -173,7 +175,7 @@ function ImageExtractor() {
 			</div>
 
 			<br />
-			
+
 			{loaded ? (
 				<ColorExtractor getColors={colors => setColors(colors)} maxColors={128}>
 					<img
@@ -183,9 +185,11 @@ function ImageExtractor() {
 						style={{ display: "none" }}
 					/>
 				</ColorExtractor>
-			) : <div>
-				<img src={IMAGE_ONE}/>
-			</div>}
+			) : (
+				<div>
+					<img src={IMAGE_ONE} />
+				</div>
+			)}
 			<canvas ref={canvas} style={{ display: "none" }} />
 
 			{loaded ? (
@@ -196,25 +200,24 @@ function ImageExtractor() {
 						style={{ maxWidth: "auto", height: "80vh", paddingTop: "1rem" }}
 					/>
 					<br />
-					<button
-						style={{
-							border: "1px solid #fff",
-							padding: "0.7rem",
-							backgroundColor: "var(--bg5)",
-							color: "#fff"
-						}}
+					<a
+						style={{ textDecoration: "none", color: "#fff" }}
+						href={imgLink}
+						download="PatternImage.png"
 					>
-						<a
-							style={{ textDecoration: "none", color: "#fff" }}
-							href={imgLink}
-							download="PatternImage"
+						<button
+							style={{
+								border: "1px solid #fff",
+								padding: "0.7rem",
+								backgroundColor: "var(--bg5)",
+								color: "#fff"
+							}}
 						>
 							download me
-						</a>
-					</button>
+						</button>
+					</a>
 				</>
 			) : null}
-
 		</>
 	);
 }
