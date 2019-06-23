@@ -146,7 +146,7 @@ function ImageExtractor() {
 					color: "#fff"
 				}}
 			>
-				Choose image{" "}
+				Upload
 			</label>
 			<div
 				style={{
@@ -199,7 +199,7 @@ function ImageExtractor() {
 						alignItems: "center",
 						justifyContent: "center",
 						flexFlow: "column",
-						paddingTop: "1rem"
+						paddingTop: "0.5rem"
 					}}
 				>
 					<a
@@ -225,7 +225,7 @@ function ImageExtractor() {
 						<img
 							ref={imgRef}
 							alt=""
-							style={{ maxHeight: "auto", width: "80%", paddingTop: "1rem" }}
+							style={{ maxHeight: "auto", width: "100%", paddingTop: "1rem" }}
 						/>
 					<br />
 				</div>

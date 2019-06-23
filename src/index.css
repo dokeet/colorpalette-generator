@@ -18,5 +18,8 @@ code {
 }
 
 html {
-  background: linear-gradient(var(--bg1), var(--bg2)) fixed;
+  background-size: cover;
+  background: linear-gradient(var(--bg1), var(--bg2)) no-repeat;
+
+  min-height: 100%;
 }
