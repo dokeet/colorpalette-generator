@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageExtractor from '../src/ImageExtractor'
+import ImageExtractor from './components/ImageExtractor'
 import './App.css';
 
 function App() {
