@@ -12,7 +12,7 @@ function ImageExtractor() {
 	let [colors, setColors] = useState(null);
 	const [loaded, setLoaded] = useState(false);
 	const [circlesBool, setCirclesBool] = useState(false);
-	const [rectBool, setRectBool] = useState(false);
+	const [rectBool, setRectBool] = useState(true);
 
 	function handleImage(e) {
 		e.preventDefault();
@@ -115,7 +115,7 @@ function ImageExtractor() {
 		}
 		changeBackground();
 
-		imgRef.current.src = canvas.current.toDataURL();
+		imgRef.current.src = canvas.current.toDataURL('image/jpeg', "0.8");
 		setImgLink(imgRef.current.src);
 	}, [colors, rectBool, circlesBool]);
 
@@ -203,7 +203,7 @@ function ImageExtractor() {
 					<a
 						style={{ textDecoration: "none", color: "#fff" }}
 						href={imgLink}
-						download="PatternImage.png"
+						download="PatternImage.jpg"
 					>
 						<button
 							style={{
