@@ -115,7 +115,7 @@ function ImageExtractor() {
 		}
 		changeBackground();
 
-		imgRef.current.src = canvas.current.toDataURL('image/jpeg', "0.8");
+		imgRef.current.src = canvas.current.toDataURL("image/jpeg", "1");
 		setImgLink(imgRef.current.src);
 	}, [colors, rectBool, circlesBool]);
 
@@ -193,15 +193,20 @@ function ImageExtractor() {
 			<canvas ref={canvas} style={{ display: "none" }} />
 
 			{loaded ? (
-				<>
-					<img
-						ref={imgRef}
-						alt=""
-						style={{ maxWidth: "auto", height: "80vh", paddingTop: "1rem" }}
-					/>
-					<br />
+				<div
+					style={{
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+						flexFlow: "column",
+						paddingTop: "1rem"
+					}}
+				>
 					<a
-						style={{ textDecoration: "none", color: "#fff" }}
+						style={{ textDecoration: "none", color: "#fff", display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+						flexFlow: "column" }}
 						href={imgLink}
 						download="PatternImage.jpg"
 					>
@@ -213,10 +218,17 @@ function ImageExtractor() {
 								color: "#fff"
 							}}
 						>
-							download me
+							get image
 						</button>
-					</a>
-				</>
+						</a>
+
+						<img
+							ref={imgRef}
+							alt=""
+							style={{ maxHeight: "auto", width: "80%", paddingTop: "1rem" }}
+						/>
+					<br />
+				</div>
 			) : null}
 		</>
 	);
